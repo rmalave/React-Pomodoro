@@ -3,11 +3,12 @@ import TimerDisplay from './TimerDisplay';
 import TimerConfig from './TimerConfig';
 import TimerButton from './TimerButton';
 import moment from 'moment';
-import * as timerStates from '../timer-state';
+import * as timerStates from '../../timer-state';
 
 class Timer extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
       currentTime: moment.duration(25, 'minutes'),
       startTime: moment.duration(25, 'minutes'),
@@ -68,7 +69,8 @@ class Timer extends Component {
 
   render() {
     return (
-      <div>
+      <div id="timer">
+        <h1>Pomodoro Timer</h1>
         <TimerDisplay
           currentTime={this.state.currentTime}
           timerState={this.state.timerState}

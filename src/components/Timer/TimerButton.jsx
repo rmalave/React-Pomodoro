@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
-import * as timerStates from '../timer-state';
+import * as timerStates from '../../timer-state';
 
 class TimerButton extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   getButton = () => {
     if(this.props.timerState === timerStates.NOT_SET) {
       return <button className="btn btn-success" onClick={this.props.startTimer}>Start</button>

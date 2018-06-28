@@ -1,5 +1,10 @@
-import React, { Component } from 'react';
-import * as timerStates from '../timer-state';
+import React from 'react';
+import * as timerStates from '../../timer-state';
+import Push from 'push.js';
+
+const notify = () => {
+  Push.create('Time\'s up! take a break!');
+}
 
 const leftPad = (val) => {
   if(val < 10) {
@@ -13,7 +18,7 @@ const TimerDisplay = (props) => (
     {props.timerState === timerStates.COMPLETE &&
       <div className = "row justify-content-center" >
         <h2 className="text-center">
-          Done with the task! Break time!  
+          {notify()}
         </h2>
       </div>
     }

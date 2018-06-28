@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 
 class TimerConfig extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   handleChange = e => {
     const startTime = this.props.startTime;
 
@@ -27,7 +23,7 @@ class TimerConfig extends Component {
     return (
       <div className="panel-body">
         <div className="container-fluid">
-        <div className = "row" >
+        <div >
           <div className="form-group">
             <div>
               <label htmlFor="hours">Hours</label>

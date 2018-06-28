@@ -1,18 +1,19 @@
 import React, {
   Component
 } from 'react';
-import './App.css'
+import './App.scss'
 import Timer from './components/Timer';
+import Todos from './components/Todos';
 
 class App extends Component {
   render() {
     return (
-      <div className = "panel panel-default app-content justify-content-center" >
-        <div className = "panel text-center" >
-          <h1>Pomodoro Timer</h1>
+      <div className = "card app-content justify-content-center" >
+        <div className = "text-center" >
           <Timer />
+          <Todos />
       </div>
-    </div>
+     </div>
     );
   }
 }
