@@ -5,6 +5,8 @@ import TimerButton from './TimerButton';
 import moment from 'moment';
 import * as timerStates from '../../timer-state';
 
+import './style.css';
+
 class Timer extends Component {
   constructor(props) {
     super(props);
@@ -70,16 +72,20 @@ class Timer extends Component {
   render() {
     return (
       <div id="timer">
-        <h1>Pomodoro Timer</h1>
-        <TimerDisplay
-          currentTime={this.state.currentTime}
-          timerState={this.state.timerState}
-          />
-        <TimerButton
-          startTimer={this.startTimer}
-          stopTimer={this.stopTimer}
-          timerState={this.state.timerState}
-          />
+        <div id="timer-body" className="row align-items-center justify-content-center">
+          <div id="timer-content">
+            <h1>Pomodoro Timer</h1>
+            <TimerDisplay
+              currentTime={this.state.currentTime}
+              timerState={this.state.timerState}
+              />
+            <TimerButton
+              startTimer={this.startTimer}
+              stopTimer={this.stopTimer}
+              timerState={this.state.timerState}
+              />
+            </div>
+          </div>
         {this.state.timerState !== timerStates.RUNNING &&
             <TimerConfig
               startTime={this.state.startTime}

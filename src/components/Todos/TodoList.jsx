@@ -4,7 +4,7 @@ import Todo from './Todo';
 const TodoList = props => {
   return props.todos.map(todo => {
     return (
-      <div key={todo.id}>
+      <div className="todo" key={todo.id}>
         <Todo
           toggleChecked={props.toggleChecked}
           removeTodo={props.removeTodo}

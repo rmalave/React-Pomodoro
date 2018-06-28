@@ -21,25 +21,25 @@ class TimerConfig extends Component {
 
   render() {
     return (
-      <div className="panel-body">
+      <div className="card-body">
         <div className="container-fluid">
         <div >
           <div className="form-group">
             <div>
               <label htmlFor="hours">Hours</label>
-              <input onChange={this.handleChange} id="hours" className="form-control" type="number" defaultValue={this.props.startTime.get('hours')}/>
+              <input onChange={this.handleChange} id="hours" name="hours" className="form-control" type="number" defaultValue={this.props.startTime.get('hours')}/>
             </div>
           </div>
           <div className="form-group">
             <div className = "col-sm-12" >
               <label htmlFor="minutes">Minutes</label>
-              <input onChange={this.handleChange} id="minutes" className="form-control" type="number" defaultValue={this.props.startTime.get('minutes')}/>
+              <input onChange={this.handleChange} id="minutes" name="minutes" className="form-control" type="number" defaultValue={this.props.startTime.get('minutes')}/>
             </div>
           </div>
           <div className="form-group">
             <div className = "col-sm-12" >
               <label htmlFor="seconds">Seconds</label>
-              <input onChange={this.handleChange} id="seconds" className="form-control" type="number" defaultValue={this.props.startTime.get('seconds')}/>
+              <input onChange={this.handleChange} id="seconds" name="seconds" className="form-control" type="number" defaultValue={this.props.startTime.get('seconds')}/>
             </div>
           </div>
         </div>

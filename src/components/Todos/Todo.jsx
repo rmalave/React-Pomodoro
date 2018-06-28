@@ -15,7 +15,7 @@ class Todo extends Component {
         <div className="card-body">
           <div className="row">
             <div className={"card-text text-left col-8 col-md-10 checked-" + this.props.todo.checked}>{this.props.todo.title}</div>
-            <div className="col-4">
+            <div className="col-4 col-md-2">
               <div className="row">
                 <div className="col-6">
                   <button onClick={this.toggleChecked}
