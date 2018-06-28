@@ -4,15 +4,15 @@ import * as timerStates from '../../timer-state';
 class TimerButton extends Component {
   getButton = () => {
     if(this.props.timerState === timerStates.NOT_SET) {
-      return <button className="btn btn-success" onClick={this.props.startTimer}>Start</button>
+      return <button id="timer-button" className="btn btn-success" onClick={this.props.startTimer}>Start</button>
     }
 
     if(this.props.timerState === timerStates.RUNNING) {
-      return <button className="btn btn-danger" onClick={this.props.stopTimer}>Stop</button>
+      return <button id="timer-button" className="btn btn-danger" onClick={this.props.stopTimer}>Stop</button>
     }
 
     if(this.props.timerState === timerStates.COMPLETE) {
-      return <button className="btn btn-info" onClick={this.props.stopTimer}>Reset</button>
+      return <button id="timer-button" className="btn btn-info" onClick={this.props.stopTimer}>Reset</button>
     }
   }
 

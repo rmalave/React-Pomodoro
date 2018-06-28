@@ -54,4 +54,15 @@ describe('Todo', () => {
     )
     expect(wrapper.find('#title').length).toEqual(1)
   });
+
+  describe('Should be able to complete an item from the todo list', () => {
+    if('should complete an item on clicking the complete button', () => {
+      const wrapper = mount(
+        <Todos />
+      )
+
+      wrapper.find('.check').simulate('click');
+      expect(wrapper.find('.checked-true').length).toEqual(1);
+    });
+  });
 });

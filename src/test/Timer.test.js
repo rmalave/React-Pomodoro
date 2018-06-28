@@ -6,7 +6,7 @@ import TimerButton from '../components/Timer';
 import TimerConfig from '../components/Timer/TimerButton';
 import TimerDisplay from '../components/Timer/TimerConfig';
 
-describe('A timer', () => {
+describe('Render Timer', () => {
   it('Timer should render without throwing an error', () => {
     const wrapper = mount(
       <Timer />
@@ -20,9 +20,16 @@ describe('A timer', () => {
     const wrapper = mount(
       <TimerButton />
     )
-    const button = wrapper.find('button');
+    const button = wrapper.find('#timer-button');
 
     expect(button.text()).toBe('Start')
+  });
+
+  it('Timer display should render without throwing an error', () => {
+    const wrapper = mount(
+      <Timer />
+    )
+    expect(wrapper.find('.timer-face').length).toEqual(1)
   });
 
   it('Timer config should render hours input without throwing an error', () => {
@@ -84,6 +91,17 @@ describe('A timer', () => {
      minutes.simulate('change', {target: {id: 'seconds', value: 10}})
 
      expect(wrapper.state('currentTime').get('seconds')).toEqual(10);
+   });
+  });
+
+  describe('Using timer', () => {
+    it('should be able to start timer', () => {
+     const wrapper = mount(<Timer />);
+     const button = wrapper.find('#timer-button');
+
+     button.simulate('click');
+
+     expect(wrapper.state('timerState')).toBe(1);
    });
   });
 });

@@ -16,13 +16,13 @@ const leftPad = (val) => {
 const TimerDisplay = (props) => (
   <div>
     {props.timerState === timerStates.COMPLETE &&
-      <div className = "row justify-content-center" >
+      <div className="row justify-content-center">
         <h2 className="text-center">
           {notify()}
         </h2>
       </div>
     }
-    <div className = "row justify-content-center" >
+    <div className="timer-face row justify-content-center">
       <h2 className="text-center">
         {`
           ${leftPad(props.currentTime.get('hours'))}:
